@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wedding Of [NAMA PRIA] & [NAMA WANITA]</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Icons (Phosphor Icons) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- 1. OPENING SCREEN -->
+    <div id="opening-screen" class="opening-screen">
+        <div class="opening-content">
+            <p class="small-title">The Wedding Of</p>
+            <h1 class="couple-names-main"><span id="os-groom">[PRIA]</span> & <span id="os-bride">[WANITA]</span></h1>
+            <p class="opening-note">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+            <h3 class="guest-name">Tamu Undangan</h3>
+            <button id="btn-open-invitation" class="btn-primary">Buka Undangan</button>
+        </div>
+    </div>
+
+    <!-- MUSIC PLAYER -->
+    <button id="music-control" class="music-control hidden">
+        <i class="ph ph-speaker-high"></i>
+    </button>
+    <audio id="bg-music" loop>
+        <source src="assets/music/wedding-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- FLOATING NAVIGATION -->
+    <nav id="bottom-nav" class="bottom-nav hidden">
+        <a href="#hero" class="nav-item active"><i class="ph ph-house"></i><span>Home</span></a>
+        <a href="#couple" class="nav-item"><i class="ph ph-heart"></i><span>Couple</span></a>
+        <a href="#story" class="nav-item"><i class="ph ph-book-open"></i><span>Story</span></a>
+        <a href="#event" class="nav-item"><i class="ph ph-calendar-blank"></i><span>Event</span></a>
+        <a href="#gallery" class="nav-item"><i class="ph ph-image"></i><span>Gallery</span></a>
+        <a href="#rsvp" class="nav-item"><i class="ph ph-envelope-simple"></i><span>RSVP</span></a>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content" class="hidden">
+
+        <!-- 2. HERO SECTION -->
+        <section id="hero" class="hero section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content animate-fade-up">
+                <p class="small-title">The Wedding Of</p>
+                <h1 class="couple-names"><span id="hero-groom">[PRIA]</span> & <span id="hero-bride">[WANITA]</span></h1>
+                <p class="wedding-date-text" id="hero-date">[TANGGAL PERNIKAHAN]</p>
+            </div>
+        </section>
+
+        <!-- 3. QUOTE SECTION -->
+        <section id="quote" class="quote section container">
+            <div class="animate-on-scroll">
+                <i class="ph-fill ph-quotes" style="font-size: 2rem; color: var(--gold);"></i>
+                <p class="quote-text" id="quote-text">[KUTIPAN PERNIKAHAN]</p>
+                <p class="quote-source" id="quote-source">[SUMBER KUTIPAN]</p>
+            </div>
+        </section>
+
+        <!-- 4. COUPLE SECTION -->
+        <section id="couple" class="couple section container bg-light">
+            <h2 class="section-title animate-on-scroll">Groom & Bride</h2>
+            <div class="couple-grid">
+                <div class="couple-card animate-on-scroll">
+                    <div class="couple-img-wrapper">
+                        <img src="https://picsum.photos/400/500?random=1" alt="Groom" class="couple-img">
+                    </div>
+                    <h3 class="couple-name" id="groom-name">[NAMA MEMPELAI PRIA]</h3>
+                    <p class="couple-desc" id="groom-desc">[DESKRIPSI MEMPELAI PRIA]</p>
+                </div>
+                <div class="couple-divider animate-on-scroll">&</div>
+                <div class="couple-card animate-on-scroll">
+                    <div class="couple-img-wrapper">
+                        <img src="https://picsum.photos/400/500?random=2" alt="Bride" class="couple-img">
+                    </div>
+                    <h3 class="couple-name" id="bride-name">[NAMA MEMPELAI WANITA]</h3>
+                    <p class="couple-desc" id="bride-desc">[DESKRIPSI MEMPELAI WANITA]</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. LOVE STORY -->
+        <section id="story" class="story section container">
+            <h2 class="section-title animate-on-scroll">Our Journey</h2>
+            <div class="timeline" id="timeline-container">
+                <!-- Injected via JS -->
+            </div>
+        </section>
+
+        <!-- 6. COUNTDOWN -->
+        <section id="countdown" class="countdown section container bg-light">
+            <h2 class="section-title animate-on-scroll">Counting Down</h2>
+            <div class="countdown-grid animate-on-scroll">
+                <div class="countdown-item">
+                    <h3 id="cd-days">00</h3>
+                    <p>Days</p>
+                </div>
+                <div class="countdown-item">
+                    <h3 id="cd-hours">00</h3>
+                    <p>Hours</p>
+                </div>
+                <div class="countdown-item">
+                    <h3 id="cd-minutes">00</h3>
+                    <p>Minutes</p>
+                </div>
+                <div class="countdown-item">
+                    <h3 id="cd-seconds">00</h3>
+                    <p>Seconds</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. EVENT SECTION -->
+        <section id="event" class="event section container">
+            <h2 class="section-title animate-on-scroll">Wedding Events</h2>
+            <div class="event-grid">
+                <div class="event-card animate-on-scroll">
+                    <i class="ph-fill ph-rings event-icon"></i>
+                    <h3>Akad Nikah</h3>
+                    <p class="event-date" id="akad-date">[TANGGAL]</p>
+                    <p class="event-time" id="akad-time">[WAKTU]</p>
+                    <p class="event-location" id="akad-location">[LOKASI]</p>
+                    <a href="#" class="btn-outline mt-2" id="akad-map">Lihat Lokasi</a>
+                </div>
+                <div class="event-card animate-on-scroll">
+                    <i class="ph-fill ph-champagne event-icon"></i>
+                    <h3>Resepsi</h3>
+                    <p class="event-date" id="resepsi-date">[TANGGAL]</p>
+                    <p class="event-time" id="resepsi-time">[WAKTU]</p>
+                    <p class="event-location" id="resepsi-location">[LOKASI]</p>
+                    <a href="#" class="btn-outline mt-2" id="resepsi-map">Lihat Lokasi</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. GALLERY -->
+        <section id="gallery" class="gallery section container bg-light">
+            <h2 class="section-title animate-on-scroll">Our Moments</h2>
+            <div class="gallery-grid animate-on-scroll">
+                <img src="https://picsum.photos/400/400?random=3" alt="Gallery 1" class="gallery-img">
+                <img src="https://picsum.photos/400/600?random=4" alt="Gallery 2" class="gallery-img">
+                <img src="https://picsum.photos/400/400?random=5" alt="Gallery 3" class="gallery-img">
+                <img src="https://picsum.photos/400/600?random=6" alt="Gallery 4" class="gallery-img">
+                <img src="https://picsum.photos/400/400?random=7" alt="Gallery 5" class="gallery-img">
+                <img src="https://picsum.photos/400/400?random=8" alt="Gallery 6" class="gallery-img">
+            </div>
+        </section>
+
+        <!-- LIGHTBOX -->
+        <div id="lightbox" class="lightbox hidden">
+            <span class="lightbox-close">&times;</span>
+            <img class="lightbox-content" id="lightbox-img">
+        </div>
+
+        <!-- 9. VIDEO PRE-WEDDING -->
+        <section id="video" class="video section container">
+            <h2 class="section-title animate-on-scroll">Pre-Wedding Video</h2>
+            <div class="video-wrapper animate-on-scroll">
+                <img src="https://picsum.photos/800/450?random=9" alt="Video Poster" class="video-poster">
+                <button class="btn-play"><i class="ph-fill ph-play"></i></button>
+            </div>
+        </section>
+
+        <!-- 10. DIGITAL GIFT -->
+        <section id="gift" class="gift section container bg-light">
+            <h2 class="section-title animate-on-scroll">Wedding Gift</h2>
+            <p class="text-center mb-4 animate-on-scroll">Doa dan kehadiran Anda adalah hadiah terindah bagi kami. Namun jika Anda ingin memberikan tanda kasih, dapat melalui:</p>
+            
+            <div class="gift-card animate-on-scroll">
+                <h4 id="bank-name">[NAMA BANK]</h4>
+                <p class="account-number" id="bank-account">[NOMOR REKENING]</p>
+                <p class="account-name" id="bank-owner">[NAMA PEMILIK]</p>
+                <button class="btn-primary btn-sm mt-2" onclick="copyRekening()">Salin Rekening</button>
+            </div>
+            
+            <div class="gift-card animate-on-scroll mt-2">
+                <h4>Kirim Kado Fisik</h4>
+                <p class="account-name mt-1" id="gift-address">[ALAMAT PENGIRIMAN]</p>
+            </div>
+        </section>
+
+        <!-- 11. RSVP -->
+        <section id="rsvp" class="rsvp section container">
+            <h2 class="section-title animate-on-scroll">RSVP</h2>
+            <div class="rsvp-form animate-on-scroll">
+                <input type="text" id="rsvp-name" placeholder="Nama Anda" class="form-control">
+                <select id="rsvp-status" class="form-control">
+                    <option value="" disabled selected>Konfirmasi Kehadiran</option>
+                    <option value="Hadir">Saya akan hadir</option>
+                    <option value="Tidak Hadir">Maaf, tidak bisa hadir</option>
+                </select>
+                <input type="number" id="rsvp-pax" placeholder="Jumlah Tamu (Orang)" class="form-control" min="1" max="5">
+                <textarea id="rsvp-message" placeholder="Berikan ucapan untuk kami..." class="form-control" rows="4"></textarea>
+                <button id="btn-rsvp-wa" class="btn-primary w-100">Konfirmasi via WhatsApp</button>
+            </div>
+        </section>
+
+        <!-- 12. WISHES / GUEST BOOK -->
+        <section id="wishes" class="wishes section container bg-light">
+            <h2 class="section-title animate-on-scroll">Wishes</h2>
+            <div class="wishes-container animate-on-scroll">
+                <!-- Dummy DB Comments -->
+                <div class="wish-card">
+                    <h4>[NAMA TAMU 1]</h4>
+                    <p>"[UCAPAN TAMU DARI DATABASE/DUMMY]"</p>
+                </div>
+                <div class="wish-card">
+                    <h4>[NAMA TAMU 2]</h4>
+                    <p>"[UCAPAN TAMU DARI DATABASE/DUMMY]"</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 13. CLOSING & FOOTER -->
+        <footer class="footer section text-center">
+            <div class="animate-on-scroll">
+                <p class="closing-text">Terima kasih atas doa dan kehadiran Anda.</p>
+                <h2 class="couple-names-main mt-2"><span id="footer-groom">[PRIA]</span> & <span id="footer-bride">[WANITA]</span></h2>
+                <p class="mt-1" id="footer-date">[TANGGAL]</p>
+            </div>
+            <div class="footer-credit mt-4">
+                <p>Made with love &copy; <span id="current-year"></span></p>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
